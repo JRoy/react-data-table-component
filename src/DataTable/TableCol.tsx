@@ -15,7 +15,7 @@ interface ColumnStyleProps extends CellProps {
 }
 
 const ColumnStyled = styled(CellExtended)<ColumnStyleProps>`
-	${({ button }) => button && 'text-align: center'};
+	${({ $button }) => $button && 'text-align: center'};
 	${({ theme, $isDragging }) => $isDragging && theme.headCells.draggingStyle};
 `;
 
@@ -177,26 +177,26 @@ function TableCol<T>({
 
 	const sortActive = !!(column.sortable && equalizeId(selectedColumn.id, column.id));
 	const disableSort = !column.sortable || disabled;
-	const nativeSortIconLeft = column.sortable && !sortIcon && !column.right;
-	const nativeSortIconRight = column.sortable && !sortIcon && column.right;
-	const customSortIconLeft = column.sortable && sortIcon && !column.right;
-	const customSortIconRight = column.sortable && sortIcon && column.right;
+	const nativeSortIconLeft = column.sortable && !sortIcon && !column.$right;
+	const nativeSortIconRight = column.sortable && !sortIcon && column.$right;
+	const customSortIconLeft = column.sortable && sortIcon && !column.$right;
+	const customSortIconRight = column.sortable && sortIcon && column.$right;
 
 	return (
 		<ColumnStyled
 			data-column-id={column.id}
 			className="rdt_TableCol"
 			$headCell
-			allowOverflow={column.allowOverflow}
-			button={column.button}
-			compact={column.compact}
-			grow={column.grow}
-			hide={column.hide}
-			maxWidth={column.maxWidth}
-			minWidth={column.minWidth}
-			right={column.right}
-			center={column.center}
-			width={column.width}
+			$allowOverflow={column.$allowOverflow}
+			$button={column.$button}
+			$compact={column.$compact}
+			$grow={column.$grow}
+			$hide={column.$hide}
+			$maxWidth={column.$maxWidth}
+			$minWidth={column.$minWidth}
+			$right={column.$right}
+			$center={column.$center}
+			$width={column.$width}
 			draggable={column.reorder}
 			$isDragging={equalizeId(column.id, draggingColumnId)}
 			onDragStart={onDragStart}

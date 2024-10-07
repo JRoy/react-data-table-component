@@ -117,23 +117,23 @@ export type TableProps<T> = {
 };
 
 export type TableColumnBase = {
-	allowOverflow?: boolean;
-	button?: boolean;
-	center?: boolean;
-	compact?: boolean;
+	$allowOverflow?: boolean;
+	$button?: boolean;
+	$center?: boolean;
+	$compact?: boolean;
 	reorder?: boolean;
-	grow?: number;
-	hide?: number | ((value: number) => CSSObject) | Media;
+	$grow?: number;
+	$hide?: number | ((value: number) => CSSObject) | Media;
 	id?: string | number;
 	ignoreRowClick?: boolean;
-	maxWidth?: string;
-	minWidth?: string;
+	$maxWidth?: string;
+	$minWidth?: string;
 	name?: string | number | React.ReactNode;
 	omit?: boolean;
-	right?: boolean;
+	$right?: boolean;
 	sortable?: boolean;
 	style?: CSSObject;
-	width?: string;
+	$width?: string;
 	wrap?: boolean;
 };
 
