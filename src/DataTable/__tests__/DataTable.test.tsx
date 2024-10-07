@@ -294,21 +294,21 @@ describe('DataTable::columns', () => {
 	});
 
 	test('should render correctly when column.allowOverflow = true', () => {
-		const mock = dataMock({ allowOverflow: true });
+		const mock = dataMock({ $allowOverflow: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly when column.compact = true', () => {
-		const mock = dataMock({ compact: true });
+		const mock = dataMock({ $compact: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly when column.button = true', () => {
-		const mock = dataMock({ button: true });
+		const mock = dataMock({ $button: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
@@ -330,63 +330,63 @@ describe('DataTable::columns', () => {
 	});
 
 	test('should render correctly if column.right', () => {
-		const mock = dataMock({ right: true });
+		const mock = dataMock({ $right: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.center', () => {
-		const mock = dataMock({ center: true });
+		const mock = dataMock({ $center: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.minWidth', () => {
-		const mock = dataMock({ minWidth: '200px' });
+		const mock = dataMock({ $minWidth: '200px' });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.maxWidth', () => {
-		const mock = dataMock({ maxWidth: '600px' });
+		const mock = dataMock({ $maxWidth: '600px' });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.width', () => {
-		const mock = dataMock({ width: '200px' });
+		const mock = dataMock({ $width: '200px' });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.hide sm', () => {
-		const mock = dataMock({ hide: 'sm' });
+		const mock = dataMock({ $hide: 'sm' });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.hide md', () => {
-		const mock = dataMock({ hide: 'md' });
+		const mock = dataMock({ $hide: 'md' });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.hide lg', () => {
-		const mock = dataMock({ hide: 'lg' });
+		const mock = dataMock({ $hide: 'lg' });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
 	});
 
 	test('should render correctly if column.hide is an integer', () => {
-		const mock = dataMock({ hide: 300 });
+		const mock = dataMock({ $hide: 300 });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
@@ -415,7 +415,7 @@ describe('DataTable:RowClicks', () => {
 
 	test('should not call onRowClicked when button = true', () => {
 		const onRowClickedMock = jest.fn();
-		const mock = dataMock({ button: true });
+		const mock = dataMock({ $button: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} onRowClicked={onRowClickedMock} />);
 
 		fireEvent.click(container.querySelector('div[id="cell-1-1"]') as HTMLElement);
@@ -435,7 +435,7 @@ describe('DataTable:RowClicks', () => {
 
 	test('should not call onRowDoubleClicked when button = true', () => {
 		const onRowDoubleClickedMock = jest.fn();
-		const mock = dataMock({ button: true });
+		const mock = dataMock({ $button: true });
 		const { container } = render(
 			<DataTable data={mock.data} columns={mock.columns} onRowDoubleClicked={onRowDoubleClickedMock} />,
 		);
@@ -604,7 +604,7 @@ describe('DataTable::sorting', () => {
 	});
 
 	test('should render correctly with a default sort field and the icon to the right when column.right = true and the native sort icon', () => {
-		const mock = dataMock({ sortable: true, right: true });
+		const mock = dataMock({ sortable: true, $right: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} />);
 
 		expect(container.firstChild).toMatchSnapshot();
@@ -698,7 +698,7 @@ describe('DataTable::sorting', () => {
 	});
 
 	test('should render correctly with a custom sortIcon and column.right = true', () => {
-		const mock = dataMock({ sortable: true, right: true });
+		const mock = dataMock({ sortable: true, $right: true });
 		const { container } = render(<DataTable data={mock.data} columns={mock.columns} sortIcon={<div>ASC</div>} />);
 
 		expect(container.firstChild).toMatchSnapshot();

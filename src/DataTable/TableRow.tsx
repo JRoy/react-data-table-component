@@ -253,7 +253,7 @@ function Row<T>({
 							id={`cell-${column.id}-${rowKeyField}`}
 							key={`cell-${column.id}-${rowKeyField}`}
 							// apply a tag that Row will use to stop event propagation when TableCell is clicked
-							dataTag={column.ignoreRowClick || column.button ? null : STOP_PROP_TAG}
+							dataTag={column.ignoreRowClick || column.$button ? null : STOP_PROP_TAG}
 							column={column}
 							row={row}
 							rowIndex={rowIndex}
