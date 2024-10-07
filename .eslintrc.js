@@ -8,7 +8,6 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'plugin:react-hooks/recommended',
 		'plugin:jsx-a11y/recommended',
-		'plugin:storybook/recommended',
 	],
 	parserOptions: {
 		ecmaVersion: 2018,
